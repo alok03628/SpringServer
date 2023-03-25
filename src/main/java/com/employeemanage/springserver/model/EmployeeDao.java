@@ -13,18 +13,22 @@ public class EmployeeDao {
     @Autowired
     private employeeRepository repository;
 
-    public Employee save(Employee employee){
-        return repository.save(employee);
+    public EmployeeInput save(EmployeeInput employeeInput){
+        return repository.save(employeeInput);
     }
 
-    public List<Employee> getAllEmployees(){
-        List<Employee> employees = new ArrayList<>();
+
+
+    public List<EmployeeInput> getAllEmployees(){
+        List<EmployeeInput> employeeInputs = new ArrayList<>();
         Streamable.of(repository.findAll())
-            .forEach(employees::add);
-        return employees;
+            .forEach(employeeInputs::add);
+        return employeeInputs;
     }
 
-    public void delete(Employee employee){
-        repository.delete(employee);
+
+
+    public void delete(EmployeeInput employeeInput){
+        repository.delete(employeeInput);
     }
 }

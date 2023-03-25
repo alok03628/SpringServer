@@ -1,6 +1,6 @@
 package com.employeemanage.springserver.controller;
 
-import com.employeemanage.springserver.model.Employee;
+import com.employeemanage.springserver.model.EmployeeInput;
 import com.employeemanage.springserver.model.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,14 +15,14 @@ public class Employeecontroller {
 
     @Autowired
     private EmployeeDao employeeDao;
-    @GetMapping("/employee/get-all")
-    public List<Employee> getAllEmployees(){
+    @GetMapping("/employeeInput/get-all")
+    public List<EmployeeInput> getAllEmployees(){
         return employeeDao.getAllEmployees();
     }
 
-    @PostMapping("/employee/save")
-    public Employee save(@RequestBody Employee employee){
-        return employeeDao.save(employee);
+    @PostMapping("/employeeInput/save")
+    public EmployeeInput save(@RequestBody EmployeeInput employeeInput){
+        return employeeDao.save(employeeInput);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.employeemanage.springserver;
 
-import com.employeemanage.springserver.model.Employee;
+import com.employeemanage.springserver.model.EmployeeInput;
 import com.employeemanage.springserver.model.EmployeeDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +16,20 @@ class SpringServerApplicationTests {
 
 	@Test
 	void addEmployeeTest() {
-		Employee employee = new Employee();
-		employee.setEmpName("Shyam");
-		employee.setAddress("Varanasi");
-		employee.setAmount(25000);
-		employee.setDate(15032023);
-		employee.setPartyName("SSKV");
-		employee.setPaymentType("RTGS");
-		employeeDao.save(employee);
+		EmployeeInput employeeInput = new EmployeeInput();
+		employeeInput.setEmpName("Shyam");
+		employeeInput.setAddress("Varanasi");
+		employeeInput.setAmount(25000);
+		employeeInput.setDate(15032023);
+		employeeInput.setPartyName("SSKV");
+		employeeInput.setPaymentType("RTGS");
+		employeeDao.save(employeeInput);
 	}
 
 	//@Test
 	void getAllEmployees() {
-		List<Employee> employees = employeeDao.getAllEmployees() ;
-			System.out.println(employees);
+		List<EmployeeInput> employeeInputs = employeeDao.getAllEmployees() ;
+			System.out.println(employeeInputs);
 		}
 
 
