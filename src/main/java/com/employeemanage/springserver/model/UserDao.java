@@ -11,8 +11,11 @@ import java.util.List;
 public class UserDao {
 
     @Autowired
-    private  userRepository repository;
+    private userRepository repository;
 
+    public User save(User users){
+        return repository.save(users);
+    }
 
     public List<User> getEmployeesDetails(){
         List<User> detailsforUser = new ArrayList<>();

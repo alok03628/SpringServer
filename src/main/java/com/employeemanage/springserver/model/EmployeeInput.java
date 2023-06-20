@@ -16,6 +16,19 @@ public class EmployeeInput {
     private String paymentType;
     private  int amount;
     private String empName;
+    private int empId;
+
+
+
+
+
+    public int getUserId() {
+        return empId;
+    }
+
+    public void setUserId(int userId) {
+        this.empId = userId;
+    }
 
     public int getReceiptNo() {
         return receiptNo;
@@ -72,10 +85,9 @@ public class EmployeeInput {
     public void setEmpName(String empName) {
         this.empName = empName;
     }
-
     @Override
     public String toString() {
-        return "Employee{" +
+        return "EmployeeInput{" +
                 "receiptNo=" + receiptNo +
                 ", date=" + date +
                 ", partyName='" + partyName + '\'' +
@@ -83,6 +95,8 @@ public class EmployeeInput {
                 ", paymentType='" + paymentType + '\'' +
                 ", amount=" + amount +
                 ", empName='" + empName + '\'' +
+                ", empId=" + empId +
                 '}';
     }
+
 }
